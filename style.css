@@ -1,0 +1,444 @@
+/* === Theme Variables === */
+:root {
+  --dark-bg: #000500;
+  --dark-primary: #473BF0;
+  --dark-accent: #6665DD;
+
+  --light-bg: #FFFFFF;
+  --light-alt: #E5E5E5;
+  --light-accent: #CCA43B;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Segoe UI', sans-serif;
+  transition: background 0.4s, color 0.4s;
+}
+
+/* === Sidebar === */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 240px;
+  height: 100vh;
+  background: inherit;
+  border-right: 2px solid currentColor;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 15px;
+  gap: 20px;
+}
+.sidebar img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid currentColor;
+}
+.nav-links {
+  width: 100%;
+}
+.nav-links a {
+  display: block;
+  padding: 12px;
+  margin: 8px 0;
+  text-align: center;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.sidebar .resume-download {
+  margin-top: auto;
+  width: 100%;
+}
+.sidebar .download-btn {
+  display: block;
+  text-align: center;
+  width: 100%;
+}
+
+/* Nav Links (dark mode) */
+.dark-mode .nav-links a {
+  border: 1px solid var(--dark-primary);
+  background: transparent;
+  color: #fff;
+}
+.dark-mode .nav-links a:hover,
+.dark-mode .nav-links a.active {
+  background: var(--dark-accent);
+  color: #fff;
+}
+
+/* Nav Links (light mode) */
+.light-mode .nav-links a {
+  border: 1px solid var(--light-accent);
+  background: var(--light-bg);
+  color: #000;
+}
+.light-mode .nav-links a:hover,
+.light-mode .nav-links a.active {
+  background: var(--light-accent);
+  color: #fff;
+}
+
+/* === Main Sections === */
+.main-section {
+  margin-left: 260px;
+  padding: 40px;
+  min-height: 100vh;
+  display: none;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.main-section.active {
+  display: block;
+}
+.main-section.fade {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* === Section Headers === */
+header.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 2px solid var(--dark-primary);
+  margin-bottom: 30px;
+}
+.light-mode header.site-header {
+  border-bottom: 2px solid var(--light-accent);
+  box-shadow: 0 2px 0 var(--light-accent);
+}
+header.site-header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+header.site-header p {
+  font-size: 1rem;
+  opacity: 0.8;
+}
+header.site-header .socials {
+  display: flex;
+  gap: 15px;
+}
+header.site-header .socials a {
+  text-decoration: none;
+  font-weight: 500;
+  color: inherit;
+  transition: color 0.3s;
+}
+header.site-header .socials a:hover {
+  color: var(--dark-accent);
+}
+.light-mode header.site-header .socials a:hover {
+  color: var(--light-accent);
+}
+
+/* === About Section === */
+.about-section {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 900px;
+  margin: auto;
+}
+.about-item {
+  display: flex;
+}
+.about-text {
+  flex: 1;
+  padding: 20px;
+  border-radius: 8px;
+}
+.dark-mode .about-text {
+  background: rgba(71, 59, 240, 0.1);
+}
+.light-mode .about-text {
+  background: rgba(204, 164, 59, 0.1);
+}
+.about-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+/* Headings alternating alignment */
+.about-text h2 {
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+  position: relative;
+  display: inline-block;
+}
+.about-item:nth-child(odd) h2 {
+  text-align: left;
+}
+.about-item:nth-child(even) h2 {
+  text-align: right;
+}
+
+/* Decorative line follows alignment */
+.about-item:nth-child(odd) h2::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 4px;
+  margin-top: 6px;
+  background: var(--dark-primary);
+}
+.about-item:nth-child(even) h2::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 4px;
+  margin-top: 6px;
+  margin-left: auto;
+  background: var(--dark-primary);
+}
+.light-mode .about-item:nth-child(odd) h2::after,
+.light-mode .about-item:nth-child(even) h2::after {
+  background: var(--light-accent);
+}
+
+/* === Timeline === */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 15px;
+}
+.timeline-entry {
+  padding: 15px;
+  border-left: 3px solid var(--dark-primary);
+  position: relative;
+}
+.timeline-entry::before {
+  content: "";
+  position: absolute;
+  left: -9px;
+  top: 15px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--dark-primary);
+}
+.light-mode .timeline-entry {
+  border-left: 3px solid var(--light-accent);
+}
+.light-mode .timeline-entry::before {
+  background: var(--light-accent);
+}
+.timeline-entry h3 {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+.timeline-date {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  display: block;
+  margin-bottom: 8px;
+}
+
+/* === Projects === */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+.project-card {
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid currentColor;
+  transition: transform 0.3s, background 0.3s;
+}
+.dark-mode .project-card {
+  background: rgba(71, 59, 240, 0.1);
+}
+.light-mode .project-card {
+  background: rgba(204, 164, 59, 0.1);
+}
+.project-card:hover {
+  transform: translateY(-5px);
+}
+.project-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+.project-card p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* === Buttons === */
+button,
+.download-btn {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  background: var(--dark-primary);
+  color: #fff;
+  transition: 0.3s;
+  text-decoration: none;
+  font-weight: 600;
+  text-align: center;
+}
+button:hover,
+.download-btn:hover {
+  background: var(--light-accent);
+  color: #fff;
+}
+
+/* === Forms === */
+form {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+input,
+textarea {
+  margin: 10px 0;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* Form Messages */
+#form-message {
+  font-weight: 600;
+  margin-top: 10px;
+  padding: 10px 12px;
+  border-radius: 6px;
+  display: none;
+  transition: opacity 0.4s ease;
+}
+.dark-mode #form-message.success {
+  background: rgba(71, 59, 240, 0.15);
+  border: 1px solid var(--dark-accent);
+  color: #a8e6a1;
+}
+.light-mode #form-message.success {
+  background: #e6ffe6;
+  border: 1px solid #66cc66;
+  color: #006600;
+}
+.dark-mode #form-message.error {
+  background: rgba(204, 64, 64, 0.15);
+  border: 1px solid #ff6666;
+  color: #ff9999;
+}
+.light-mode #form-message.error {
+  background: #ffe6e6;
+  border: 1px solid #cc6666;
+  color: #660000;
+}
+
+/* === Footer === */
+footer {
+  margin-left: 260px;
+  text-align: center;
+  padding: 20px;
+}
+
+/* === Theme Toggle === */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 24px;
+  border-radius: 20px;
+  border: 2px solid currentColor;
+  background: var(--light-alt);
+  display: flex;
+  align-items: center;
+  padding: 2px;
+  cursor: pointer;
+  transition: 0.3s;
+  z-index: 200;
+}
+.theme-toggle .circle {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: currentColor;
+  transition: transform 0.3s;
+}
+.dark-mode .theme-toggle {
+  background: var(--dark-primary);
+}
+.dark-mode .theme-toggle .circle {
+  transform: translateX(26px);
+  background: #fff;
+}
+
+/* === Modes === */
+.dark-mode {
+  background: var(--dark-bg);
+  color: #fff;
+}
+.light-mode {
+  background: var(--light-bg);
+  color: #000;
+}
+
+/* === Landing Page === */
+.landing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+  padding: 20px;
+}
+.intro-container {
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.profile-pic {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid currentColor;
+}
+.intro-container h1 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+.intro-container .highlight {
+  color: var(--dark-primary);
+}
+.light-mode .intro-container .highlight {
+  color: var(--light-accent);
+}
+.tagline {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+.enter-btn {
+  margin-top: 20px;
+  padding: 12px 24px;
+  border-radius: 6px;
+  background: var(--dark-primary);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+.enter-btn:hover {
+  background: var(--light-accent);
+  color: #fff;
+}

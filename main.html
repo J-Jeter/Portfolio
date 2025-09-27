@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jabulani Kumalo | Portfolio</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body class="dark-mode">
+  <!-- Theme Toggle -->
+  <button id="theme-toggle" class="theme-toggle">
+    <div class="circle"></div>
+  </button>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <img src="asset/profile.jpeg" alt="Profile Image"/>
+    <nav class="nav-links">
+      <a href="index.html">← Back</a>
+      <a href="#" data-section="about" class="active">About</a>
+      <a href="#" data-section="projects">Projects</a>
+      <a href="#" data-section="contact">Contact</a>
+    </nav>
+    <a href="asset/Jabulani_Kumalo_Resume.pdf" class="download-btn" download>Download Resume</a>
+  </aside>
+
+  <!-- About Section -->
+  <section id="about" class="main-section active fade">
+    <header class="site-header">
+      <h1>About Me</h1>
+    </header>
+
+    <div class="about-section">
+      <!-- About -->
+      <div class="about-item">
+        <div class="about-text">
+          <h2 class="align-left">About Me</h2>
+          <p>Hi, I’m Jabulani Jeter Kumalo an aspiring full-stack web developer with a passion for building digital experiences that are not only functional but intuitive and user-friendly.</p>
+          <p>My journey into tech began during my time in the banking sector, where I helped clients navigate self-service platforms. That experience showed me how powerful good design and usability can be and how frustrating it is when they’re missing.</p>
+        </div>
+      </div>
+
+      <!-- Experience -->
+      <div class="about-item">
+        <div class="about-text">
+          <h2 class="align-right">Experience</h2>
+          <div class="timeline">
+            <div class="timeline-entry">
+              <h3>Banking Sector</h3>
+              <span class="timeline-date">2017 – 2020</span>
+              <p>Helped clients adopt and use digital self-service solutions effectively, bridging the gap between technology and customer needs.</p>
+            </div>
+            <div class="timeline-entry">
+              <h3>Freelance Web Development</h3>
+              <span class="timeline-date">2020 – 2023</span>
+              <p>Worked on personal and collaborative projects focused on usability, accessibility, and clean code.</p>
+            </div>
+            <div class="timeline-entry">
+              <h3>Startup Collaboration</h3>
+              <span class="timeline-date">2023 – Present</span>
+              <p>Partnered with small businesses to develop digital platforms that improve customer engagement.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Education -->
+      <div class="about-item">
+        <div class="about-text">
+          <h2 class="align-left">Education</h2>
+          <div class="timeline">
+            <div class="timeline-entry">
+              <h3>Self-Directed Learning</h3>
+              <span class="timeline-date">Ongoing</span>
+              <p>Focused on HTML, CSS, JavaScript, Node.js, and React through online resources and projects.</p>
+            </div>
+            <div class="timeline-entry">
+              <h3>Workshops & Bootcamps</h3>
+              <span class="timeline-date">2021 – 2022</span>
+              <p>Attended coding bootcamps and workshops to sharpen problem-solving and software development skills.</p>
+            </div>
+            <div class="timeline-entry">
+              <h3>Continuous Learning</h3>
+              <span class="timeline-date">2023 – Present</span>
+              <p>Keeping skills updated by exploring new frameworks and real-world projects.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="main-section">
+    <header class="site-header">
+      <div>
+        <h1>Projects</h1>
+        <p>Some of the things I’ve been working on</p>
+      </div>
+      <div class="socials">
+        <a href="#">LinkedIn</a>
+        <a href="#">GitHub</a>
+        <a href="#">Email</a>
+      </div>
+    </header>
+
+    <div class="project-grid">
+      <div class="project-card">
+        <h3>Portfolio Website</h3>
+        <p>A responsive single-page app showcasing my skills and projects.</p>
+      </div>
+      <div class="project-card">
+        <h3>E-commerce Store</h3>
+        <p>A demo store with shopping cart, checkout, and product filtering.</p>
+      </div>
+      <div class="project-card">
+        <h3>Blog Platform</h3>
+        <p>A CRUD blog application with user login and a markdown editor.</p>
+      </div>
+      <div class="project-card">
+        <h3>Startup Collaboration</h3>
+        <p>Worked with small businesses to build digital platforms for customer engagement.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="main-section">
+    <header class="site-header">
+      <div><h1>Contact Me</h1></div>
+    </header>
+
+    <form action="https://formspree.io/f/myznkjav" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required/>
+      <input type="email" name="email" placeholder="Your Email" required/>
+      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit" class="download-btn">Send</button>
+      <p id="form-message"></p>
+    </form>
+  </section>
+
+  <footer>&copy; 2025 Jabulani Kumalo</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
