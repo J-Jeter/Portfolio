@@ -276,6 +276,45 @@ header.site-header .socials a:hover {
 .project-card p {
   font-size: 1rem;
   line-height: 1.5;
+  margin-bottom: 15px;
+  flex-grow: 1;
+}
+
+/* Project Button Styles */
+.portfolio-btn,
+.blog-btn,
+.e-commerce-btn {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.3s;
+  font-weight: 600;
+}
+
+.dark-mode .portfolio-btn,
+.dark-mode .blog-btn,
+.dark-mode .e-commerce-btn {
+  background: var(--dark-primary);
+  color: white;
+}
+
+.light-mode .portfolio-btn,
+.light-mode .blog-btn,
+.light-mode .e-commerce-btn {
+  background: var(--light-accent);
+  color: black;
+}
+
+.portfolio-btn:hover,
+.blog-btn:hover,
+.e-commerce-btn:hover {
+  opacity: 0.85;
+  transform: scale(1.05);
 }
 
 /* === Games Grid === */
