@@ -278,6 +278,62 @@ header.site-header .socials a:hover {
   line-height: 1.5;
 }
 
+/* === Games Grid === */
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+.game-card {
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid currentColor;
+  transition: transform 0.3s, background 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+.dark-mode .game-card {
+  background: rgba(71, 59, 240, 0.1);
+}
+.light-mode .game-card {
+  background: rgba(204, 164, 59, 0.1);
+}
+.game-card:hover {
+  transform: translateY(-5px);
+}
+.game-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+.game-card p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 15px;
+  flex-grow: 1;
+}
+.game-btn {
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.3s;
+}
+.dark-mode .game-btn {
+  background: var(--dark-primary);
+  color: white;
+}
+.light-mode .game-btn {
+  background: var(--light-accent);
+  color: black;
+}
+.game-btn:hover {
+  opacity: 0.85;
+  transform: scale(1.05);
+}
+
 /* === Buttons === */
 button,
 .download-btn {
